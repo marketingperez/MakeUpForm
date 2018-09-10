@@ -23,3 +23,10 @@ img{
 .product input{
     float: right;
 }
+
+@media only screen and (max-width: 640px) {
+    .product label{
+       font-size: 12px;
+       width: 75%;
+    }
+}
