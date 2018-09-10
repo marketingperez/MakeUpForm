@@ -24,17 +24,17 @@ function clearForm() {
     var notes = $("#notes").val("");
 
     //get all active list items and remove active class
-    var items = $(".list-group");
-    var listNodeArray = [];
-    for (var i = 0; i < items.length; i++) {
-        listNodeArray = items[i].children;
+    // var items = $(".list-group");
+    // var listNodeArray = [];
+    // for (var i = 0; i < items.length; i++) {
+    //     listNodeArray = items[i].children;
 
-        for (var j = 0; j < listNodeArray.length; j++) {
-            listNodeArray[j].className = "list-group-item";
-        }
+    //     for (var j = 0; j < listNodeArray.length; j++) {
+    //         listNodeArray[j].className = "list-group-item";
+    //     }
 
-    }
-
+    // }
+    $("input").val("");
 
     var dropDownValue = $("#dropdownMenu1");
     dropDownValue[0].innerHTML = "Email To....";
@@ -75,7 +75,9 @@ function sendEmail() {
     var sections = $(".section");
     var listArray = [];
     var items = [];
-    var selectedItem; 
+    var label; 
+    var title;
+    var value;
     var html;
     var bodyTemplate = "";
     var nodeNames = [];
@@ -87,13 +89,12 @@ function sendEmail() {
         
         bodyTemplate = bodyTemplate  + sectionTitle + '%0A' ;
         for (var j = 0; j < items.length; j++) {
-            if (items[j].className === "list-group-item active") {
-                selectedItem =  items[j].innerHTML;
-                bodyTemplate = bodyTemplate + selectedItem +'%0A';
-            }else{
-               
+          value =  items[j].children[1].value;
+            if (value > 0) {
+                label = items[j].children[0].innerHTML;
+               // title = items[j].parentElement.previousElementSibling
+                bodyTemplate = bodyTemplate + "QTY: " + value + "   " + label + '%0A';
             }
-            
         }
          bodyTemplate = bodyTemplate  +'%0A';
         
