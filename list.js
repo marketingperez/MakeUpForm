@@ -94,7 +94,11 @@ function sendEmail() {
         for (var j = 0; j < items.length; j++) {
           value =  items[j].children[1].value;
             if (value > 0) {
+
                 label = items[j].children[0].innerHTML;
+                if(label =="NATUREL BLUSHER STICK"){
+                    console.log(label);
+                }
                // title = items[j].parentElement.previousElementSibling
                 bodyTemplate = bodyTemplate + "QTY: " + value + "   " + label + '%0A';
             }
@@ -104,9 +108,9 @@ function sendEmail() {
 
     }
    
-      bodyTemplate = bodyTemplate  +'%0A%0A' + "Contacts: "  + '%0A' + contacts   +'%0A%0A';
-      bodyTemplate = bodyTemplate  +'%0A%0A' + "Notes: "  + '%0A' + notes;
-
+      bodyTemplate = bodyTemplate  +'%0A' + "Contacts: "  + '%0A' + contacts   +'%0A';
+      bodyTemplate = bodyTemplate  +'%0A' + "Notes: "  + '%0A' + notes;
+      console.log(bodyTemplate);
       //strip white space out of dropdown value
       dropDownValue = dropDownValue.replace(/\s/g, '');
        
