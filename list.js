@@ -1,3 +1,4 @@
+var bodyTemplate = "";
 $(function () {
 
     //clicking a list item event
@@ -34,10 +35,12 @@ function clearForm() {
     //     }
 
     // }
+    bodyTemplate = "";
     $("input").val("");
 
     var dropDownValue = $("#dropdownMenu1");
     dropDownValue[0].innerHTML = "Email To....";
+
 
 
 }
@@ -79,7 +82,7 @@ function sendEmail() {
     var title;
     var value;
     var html;
-    var bodyTemplate = "";
+   
     var nodeNames = [];
     
     for (var i = 0; i < sections.length; i++) {
@@ -110,4 +113,5 @@ function sendEmail() {
    // window.location.href = "mailto:" + dropDownValue + "?subject=" + companyName + "&cc=" + contacts + "&body=message%20goes%20here";
      window.location.href = "mailto:" + dropDownValue + "?subject=" + companyName  + "&body=" + bodyTemplate;
 
+     bodyTemplate = "";
 }
