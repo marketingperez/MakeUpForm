@@ -48,7 +48,7 @@ function clearForm() {
 function sendEmail() {
     var companyName = $("#companyName").val();
     if (companyName === "" || companyName === " " || companyName === null) {
-        companyName = "Make up List (LA 2017)";
+        companyName = "Make Up New York 2018";
     }
     var contacts = " ";
     var contact1 = $("#contact1").val();
