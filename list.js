@@ -93,24 +93,27 @@ function sendEmail() {
         bodyTemplate = bodyTemplate  + sectionTitle + '%0A' ;
         for (var j = 0; j < items.length; j++) {
           value =  items[j].children[1].value;
+          console.log(items[j].children[1]);
             if (value > 0) {
 
                 label = items[j].children[0].innerHTML;
-                if(label =="NATUREL BLUSHER STICK"){
-                    console.log(label);
-                }
                // title = items[j].parentElement.previousElementSibling
-                bodyTemplate = bodyTemplate + "QTY: " + value + "   " + label + '%0A';
+                bodyTemplate = bodyTemplate  + value + " " + label + '%0A';
             }
         }
          bodyTemplate = bodyTemplate  +'%0A';
         
-
     }
    
+    // listArray = $('input[name="quantity"]');
+    // for (var i = 0; i < listArray.length; i++) {
+    //     console.log(listArray[i]);
+    //     bodyTemplate = bodyTemplate + listArray[i] + '%0A';
+    // }
+
       bodyTemplate = bodyTemplate  +'%0A' + "Contacts: "  + '%0A' + contacts   +'%0A';
       bodyTemplate = bodyTemplate  +'%0A' + "Notes: "  + '%0A' + notes;
-      console.log(bodyTemplate);
+     // console.log(bodyTemplate);
       //strip white space out of dropdown value
       dropDownValue = dropDownValue.replace(/\s/g, '');
        
