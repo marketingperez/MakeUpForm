@@ -98,7 +98,7 @@ function sendEmail() {
 
                 label = items[j].children[0].innerHTML;
                // title = items[j].parentElement.previousElementSibling
-                bodyTemplate = bodyTemplate  + value + "          " + label +"            " +"Comments: "+'%0A';
+                bodyTemplate = bodyTemplate  +"Quantity: "+ value + "          "+"Product: " + label +"            " +"Comments: "+'%0A';
             }
         }
          bodyTemplate = bodyTemplate  +'%0A';
