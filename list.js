@@ -82,7 +82,8 @@ function sendEmail() {
     var title;
     var value;
     var html;
-   
+    var com1;
+    
     var nodeNames = [];
     
     for (var i = 0; i < sections.length; i++) {
@@ -90,15 +91,16 @@ function sendEmail() {
         listArray = sections[i].children[1];
         items = listArray.children;
         
-        bodyTemplate = bodyTemplate  + sectionTitle + '%0A' ;
+       
         for (var j = 0; j < items.length; j++) {
           value =  items[j].children[1].value;
           console.log(items[j].children[1]);
-            if (value > 0) {
-
+            if (value > 0) {bodyTemplate = bodyTemplate  + sectionTitle + '%0A' ;}
+            if(value > 0> {
                 label = items[j].children[0].innerHTML;
+                com1 = items[j].children[2].value;
                // title = items[j].parentElement.previousElementSibling
-                bodyTemplate = bodyTemplate  +"Quantity: "+ value + "          "+"Product: " + label +"                     " +"Comments: "+'%0A';
+                bodyTemplate = bodyTemplate  +"Quantity: "+ value + "          "+"Product: " + label +"                     " +"Comments: "+ com1 +'%0A';
             }
         }
          bodyTemplate = bodyTemplate  +'%0A';
